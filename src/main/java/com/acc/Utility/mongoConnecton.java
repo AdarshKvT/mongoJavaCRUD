@@ -12,11 +12,14 @@ public class mongoConnecton {
 
 	public static JSONObject mongoConnecton(String string) {
 		
-		String uriString = "mongodb+srv://sachin:sachin@cluster0-emxhp.mongodb.net/test?retryWrites=true&w=majority";
+		String uriString = "connectionUrl";
 
+		//build a connection with mongo cluster
 		MongoClientURI uri = new MongoClientURI(uriString);
 		MongoClient mongoClient = new MongoClient(uri);
-		MongoDatabase database = mongoClient.getDatabase("testDatabse");
+		
+		//get database and collection
+		MongoDatabase database = mongoClient.getDatabase("testDatabase");
 		MongoCollection<Document> collection_name = database.getCollection("collection_name");
 		return null;
 	
