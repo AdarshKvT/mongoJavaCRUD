@@ -17,11 +17,11 @@ import com.mongodb.client.MongoDatabase;
 
 public class ReadOperation implements RequestStreamHandler {
 	public void handleRequest(InputStream input, OutputStream output, Context context) {
-		String uriString = "mongodb+srv://sachin:sachin@cluster0-emxhp.mongodb.net/test?retryWrites=true&w=majority";
+		String uriString = "connectionUrl";
 
 		MongoClientURI uri = new MongoClientURI(uriString);
 		MongoClient mongoClient = new MongoClient(uri);
-		MongoDatabase database = mongoClient.getDatabase("testDatabse");
+		MongoDatabase database = mongoClient.getDatabase("testDatabase");
 		MongoCollection<Document> collname = database.getCollection("collection");
 
 		// =======( Read entire collection from database-->findAll)
