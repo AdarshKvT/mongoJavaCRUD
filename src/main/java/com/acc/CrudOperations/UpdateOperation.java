@@ -21,7 +21,7 @@ public class UpdateOperation implements RequestStreamHandler {
 		LambdaLogger logger = context.getLogger();
 		
 		// update a document by using query
-		String uriString = "mongodb+srv://sachin:sachin@cluster0-emxhp.mongodb.net/test?retryWrites=true&w=majority";
+		String uriString = "connectionUrl";
 		MongoClientURI uri = new MongoClientURI(uriString);
 		MongoClient mongoClient = new MongoClient(uri);
 
