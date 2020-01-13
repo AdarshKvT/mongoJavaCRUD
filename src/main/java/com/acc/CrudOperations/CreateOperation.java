@@ -23,11 +23,11 @@ public class CreateOperation implements RequestStreamHandler {
 		// for logging the console logs
 		LambdaLogger logger = context.getLogger();
 
-		String uriString = "mongodb+srv://sachin:sachin@cluster0-emxhp.mongodb.net/test?retryWrites=true&w=majority";
+		String uriString = "connectionUrl";
 
 		MongoClientURI uri = new MongoClientURI(uriString);
 		MongoClient mongoClient = new MongoClient(uri);
-		MongoDatabase database = mongoClient.getDatabase("testDatabse");
+		MongoDatabase database = mongoClient.getDatabase("testDatabase");
 		MongoCollection<Document> collection = database.getCollection("collection");
 
 		// Create a document consist of keys and values
