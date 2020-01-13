@@ -20,13 +20,13 @@ public class DeleteOperation implements RequestStreamHandler {
 		// for logging the console logs
 		LambdaLogger logger = context.getLogger();
 
-		String uriString = "mongodb+srv://sachin:sachin@cluster0-emxhp.mongodb.net/test?retryWrites=true&w=majority";
+		String uriString = "connectionUrl";
 		// building a connection with mongo cluster
 		MongoClientURI uri = new MongoClientURI(uriString);
 		MongoClient mongoClient = new MongoClient(uri);
 
 		// get database and colletion
-		MongoDatabase database = mongoClient.getDatabase("testDatabse");
+		MongoDatabase database = mongoClient.getDatabase("testDatabase");
 		MongoCollection<Document> collection_name = database.getCollection("collection_name");
 
 		// Filter query
